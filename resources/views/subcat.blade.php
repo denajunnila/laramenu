@@ -13,6 +13,7 @@
 
            
                 <div class="col-sm-4">
+      
                    <img class="img-responsive" src="/img/{{$menus->img}}" alt="">
                     <h1><a href=" /item/{{$menus->id}} ">{{ $menus->title }}</a></h1>
 

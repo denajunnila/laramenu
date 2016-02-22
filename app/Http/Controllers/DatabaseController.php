@@ -22,7 +22,7 @@ class DatabaseController extends Controller
 
     public function item($id)
     {
-    	$menu=DB::table('menu')->where([ ['subcat_id', $id], ['type', 'item'] ])->get();
+    	$menu=DB::table('menu')->where('subcat_id', $id)->where('type', 'item')->get();
 
     	return view('item', compact('menu'));
 
@@ -30,7 +30,7 @@ class DatabaseController extends Controller
      public function subcat($id)
     {
 
-		$menu=DB::table('menu')->where([ ['cat_id', $id], ['type', 'subcat'] ])->get();
+		$menu=DB::table('menu')->where('type', 'subcat')->where('cat_id', $id)->get();
     	return view('subcat', compact('menu'));
 
     }
