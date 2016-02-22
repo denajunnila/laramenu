@@ -13,11 +13,17 @@ class MenuTable extends Migration
     public function up()
     {
         Schema::create('menu', function (Blueprint $table) {
+           // Individual number for each item
            $table->increments('id');
+           // Type of item cat, subcat or item
            $table->string('type');
+           // Name of the item
            $table->string('title');
+           // name of the image.jpg
            $table->string('img');
+           // cat_id matches with the main cat
            $table->integer('cat_id');
+            // subcat_id matches with the subcat
            $table->integer('subcat_id');
        });
     }

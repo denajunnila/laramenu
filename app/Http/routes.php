@@ -14,10 +14,11 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+//This is the main page
 Route::get('/', 'DatabaseController@home');
-Route::get('subcat', 'DatabaseController@subcat');
-Route::get('item', 'DatabaseController@item');
+//This is the subcatagory page with id to limit what is displayed
 Route::get('subcat/{id}', 'DatabaseController@subcat');
+//This is the subcatagory page with id to limit what is displayed
 Route::get('item/{id}', 'DatabaseController@item');
 
 
