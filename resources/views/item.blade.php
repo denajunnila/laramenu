@@ -14,6 +14,8 @@
       @foreach($menu as $menus)
           		<!-- separate screen to 3 sections -->
                 <div class="col-sm-4">
+                  <!-- Delete item button-->
+                    <a href="{{ url('deletecat', $menus->id)  }}">DELETE</a>
                 	<!-- display current image from menu database-->
                    <img class="img-responsive" src="/img/{{$menus->img}}" alt="">
                    <!-- display the item title -->

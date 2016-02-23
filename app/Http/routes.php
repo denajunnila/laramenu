@@ -20,6 +20,7 @@ Route::get('/', 'DatabaseController@home');
 Route::get('subcat/{id}', 'DatabaseController@subcat');
 //This is the subcatagory page with id to limit what is displayed
 Route::get('item/{id}', 'DatabaseController@item');
+Route::get('deletecat/{id}', 'DatabaseController@deletecat');
 
 
 /*

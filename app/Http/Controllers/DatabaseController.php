@@ -17,6 +17,7 @@ class DatabaseController extends Controller
     {
         //Declare the database 'menu'; only get if type=cat; get items that meet criteria from database
     	$menu=DB::table('menu')->where('type', 'cat')->get();
+
         // send this to the welcome page with info in 'menu'
     	return view('welcome', compact('menu'));        
 
@@ -34,10 +35,24 @@ class DatabaseController extends Controller
     {
         //Declare the database 'menu'; only get if menu->cat_id='the current id' and type=subcat; get items that meet criteria from database 
 		$menu=DB::table('menu')->where('type', 'subcat')->where('cat_id', $id)->get();
+        //$title=$menu->'title';
         // send this to the item page with info in 'menu'
     	return view('subcat', compact('menu'));
 
     }
+
+         public function deletecat($id)
+    {
+
+        DB::table('Menu')->where('cat_id', $id)->Delete();
+        DB::table('Menu')->where('subcat_id', $id)->Delete();
+        DB::table('Menu')->where('id', $id)->Delete();
+        return back();
+
+    }
+    
+
+
 
 
 }
